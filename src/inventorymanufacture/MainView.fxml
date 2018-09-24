@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="383.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorymanufacture.MainViewController">
+    <children>
+        <Button fx:id="btnExit" layoutX="774.0" layoutY="339.0" onAction="#HandleBtnExit" prefHeight="30.0" prefWidth="115.0" text="Exit" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <AnchorPane layoutX="496.0" layoutY="76.0" prefHeight="231.0" prefWidth="443.0" style="-fx-border-color: black; -fx-border-radius: 4px;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="175.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="Search" />
+            <TextField layoutX="281.0" layoutY="17.0" />
+            <Button layoutX="356.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Delete" />
+            <Button layoutX="269.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="65.0" text="Modify" />
+            <Button fx:id="btnAddPart" layoutX="175.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnAdd" prefHeight="30.0" prefWidth="65.0" text="Add" />
+            <TableView layoutX="14.0" layoutY="60.0" prefHeight="112.0" prefWidth="416.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Part ID" />
+                  <TableColumn prefWidth="75.0" text="Part Name" />
+                  <TableColumn prefWidth="121.0" text="Inventory Level" />
+                  <TableColumn prefWidth="144.0" text="Price/Cost per Unit" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="76.0" prefHeight="231.0" prefWidth="443.0" style="-fx-border-color: black; -fx-border-radius: 4px;">
+         <children>
+            <TableView layoutX="14.0" layoutY="60.0" prefHeight="112.0" prefWidth="416.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Part ID" />
+                  <TableColumn prefWidth="75.0" text="Part Name" />
+                  <TableColumn prefWidth="121.0" text="Inventory Level" />
+                  <TableColumn prefWidth="144.0" text="Price/Cost per Unit" />
+               </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="14.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="175.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="Search" />
+            <TextField layoutX="281.0" layoutY="17.0" />
+            <Button layoutX="356.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Delete" />
+            <Button layoutX="269.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="65.0" text="Modify" />
+            <Button layoutX="175.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="65.0" text="Add" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="14.0" layoutY="28.0" text="Inventory Management System" textFill="#2c00c9">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
