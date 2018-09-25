@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
@@ -22,13 +24,25 @@ import javafx.stage.Stage;
  *
  * @author maxra
  */
-public class AddPartViewController implements Initializable {
+public class PartViewController implements Initializable {
 
     @FXML
     Button btnCancel;
 
     @FXML
+    RadioButton radioInHouse;
+    @FXML
+    RadioButton radioOutsourced;
+    @FXML
+    ToggleGroup radioToggleGroup;
+
+    @FXML
     private void HandleBtnCancel(ActionEvent event) throws IOException {
+        ChangeScene("MainView.fxml");
+    }
+
+    @FXML
+    private void ChangeScene(String fxmlFile) throws IOException {
         Stage stage;
         Parent root;
         stage = (Stage) btnCancel.getScene().getWindow();
@@ -43,7 +57,6 @@ public class AddPartViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
 }

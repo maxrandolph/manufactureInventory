@@ -39,7 +39,7 @@ public class MainViewController implements Initializable {
         Stage stage;
         Parent root;
         stage = (Stage) btnAddPart.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("AddPartView.fxml"));
+        root = FXMLLoader.load(getClass().getResource("PartView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
