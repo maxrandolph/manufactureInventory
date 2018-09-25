@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
@@ -35,28 +36,30 @@ public class PartViewController implements Initializable {
     RadioButton radioOutsourced;
     @FXML
     ToggleGroup radioToggleGroup;
+    @FXML
+    Label labelActionPart;
 
     @FXML
     private void HandleBtnCancel(ActionEvent event) throws IOException {
-        ChangeScene("MainView.fxml");
+        InventoryManufacture.ChangeScene("MainView.fxml", btnCancel);
     }
 
-    @FXML
-    private void ChangeScene(String fxmlFile) throws IOException {
-        Stage stage;
-        Parent root;
-        stage = (Stage) btnCancel.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
+//    @FXML
+//    private void ChangeScene(String fxmlFile) throws IOException {
+//        Stage stage;
+//        Parent root;
+//        stage = (Stage) btnCancel.getScene().getWindow();
+//        root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+//        Scene scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+//    }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        labelActionPart.setText(InventoryManufacture.actionIntent == ActionIntent.Add ? "Add Part" : "Modify Part");
     }
 
 }

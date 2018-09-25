@@ -27,7 +27,13 @@ public class MainViewController implements Initializable {
     @FXML
     Button btnAddPart;
     @FXML
-    private Label label;
+    Button btnModifyPart;
+    @FXML
+    Button btnAddProduct;
+    @FXML
+    Button btnModifyProduct;
+    @FXML
+    private Label labelIMS;
 
     @FXML
     private void HandleBtnExit(ActionEvent event) {
@@ -35,19 +41,31 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void HandleBtnAdd(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        stage = (Stage) btnAddPart.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("PartView.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    private void HandleBtnAddPart(ActionEvent event) throws IOException {
+        InventoryManufacture.actionIntent = ActionIntent.Add;
+        InventoryManufacture.ChangeScene("PartView.fxml", btnAddPart);
+    }
+
+    @FXML
+    private void HandleBtnModifyPart(ActionEvent event) throws IOException {
+        InventoryManufacture.actionIntent = ActionIntent.Modify;
+        InventoryManufacture.ChangeScene("PartView.fxml", btnModifyPart);
+    }
+
+    @FXML
+    private void HandleBtnAddProduct(ActionEvent event) throws IOException {
+        InventoryManufacture.actionIntent = ActionIntent.Add;
+        InventoryManufacture.ChangeScene("ProductView.fxml", btnAddProduct);
+    }
+
+    @FXML
+    private void HandleBtnModifyProduct(ActionEvent event) throws IOException {
+        InventoryManufacture.actionIntent = ActionIntent.Modify;
+        InventoryManufacture.ChangeScene("ProductView.fxml", btnModifyProduct);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-
 }

@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorymanufacture.PartViewController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="{Action} Part">
+      <Label fx:id="labelActionPart" layoutX="14.0" layoutY="14.0" text="{Action} Part">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
