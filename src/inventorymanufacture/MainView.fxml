@@ -20,8 +20,8 @@
             </Label>
             <Button layoutX="175.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="Search" />
             <TextField layoutX="281.0" layoutY="17.0" />
-            <Button layoutX="356.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Delete" />
-            <Button fx:id="btnModifyProduct" layoutX="281.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnModifyProduct" prefHeight="30.0" prefWidth="65.0" text="Modify" />
+            <Button disable="true" layoutX="356.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Delete" />
+            <Button fx:id="btnModifyProduct" disable="true" layoutX="281.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnModifyProduct" prefHeight="30.0" prefWidth="65.0" text="Modify" />
             <Button fx:id="btnAddProduct" layoutX="204.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnAddProduct" prefHeight="30.0" prefWidth="65.0" text="Add" />
             <TableView layoutX="14.0" layoutY="60.0" prefHeight="112.0" prefWidth="416.0">
                <columns>
@@ -37,11 +37,14 @@
          <children>
             <TableView fx:id="tablePart" layoutX="14.0" layoutY="60.0" prefHeight="112.0" prefWidth="416.0">
                <columns>
-                  <TableColumn fx:id="colPartId" editable="false" prefWidth="75.0" text="Part ID" />
-                  <TableColumn fx:id="colPartName" editable="false" prefWidth="75.0" text="Part Name" />
-                  <TableColumn fx:id="colInventoryLevel" editable="false" prefWidth="121.0" text="Inventory Level" />
-                  <TableColumn fx:id="colPriceCostPerUnit" editable="false" prefWidth="144.0" text="Price/Cost per Unit" />
+                  <TableColumn fx:id="colPartId" editable="false" prefWidth="47.0" text="Part ID" />
+                  <TableColumn fx:id="colPartName" editable="false" prefWidth="132.0" text="Part Name" />
+                  <TableColumn fx:id="colInventoryLevel" editable="false" prefWidth="106.0" text="Inventory Level" />
+                  <TableColumn fx:id="colPriceCostPerUnit" editable="false" prefWidth="129.0" text="Price/Cost per Unit" />
                </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             <Label layoutX="14.0" layoutY="14.0" text="Parts">
                <font>
@@ -50,8 +53,8 @@
             </Label>
             <Button layoutX="175.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="Search" />
             <TextField layoutX="281.0" layoutY="17.0" />
-            <Button layoutX="356.0" layoutY="187.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Delete" />
-            <Button fx:id="btnModifyPart" layoutX="281.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnModifyPart" prefHeight="30.0" prefWidth="65.0" text="Modify" />
+            <Button fx:id="btnDeletePart" disable="true" layoutX="356.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnDeletePart" prefHeight="30.0" prefWidth="69.0" text="Delete" />
+            <Button fx:id="btnModifyPart" disable="true" layoutX="281.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnModifyPart" prefHeight="30.0" prefWidth="65.0" text="Modify" />
             <Button fx:id="btnAddPart" layoutX="204.0" layoutY="187.0" mnemonicParsing="false" onAction="#HandleBtnAddPart" prefHeight="30.0" prefWidth="65.0" text="Add" />
          </children>
       </AnchorPane>

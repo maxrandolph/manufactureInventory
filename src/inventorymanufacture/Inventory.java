@@ -99,4 +99,14 @@ public class Inventory {
         return allParts;
     }
 
+    int getNewPartId() {
+        int maxId = 0;
+        for (Part part : allParts) {
+            if (part.getPartID() >= maxId) {
+                maxId = part.getPartID() + 1;
+            }
+        }
+        return maxId;
+    }
+
 }

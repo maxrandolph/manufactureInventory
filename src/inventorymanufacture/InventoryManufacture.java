@@ -7,11 +7,14 @@ package inventorymanufacture;
 
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -25,6 +28,10 @@ public class InventoryManufacture extends Application {
     // actions.
     public static ActionIntent actionIntent;
     public static Inventory inventory;
+    
+    // These refer to what part or product is currently selected.
+    public static Part activePart;
+    public static Product activeProduct;
 
     // JavaFX stuff
     public static Stage stage;
@@ -57,6 +64,18 @@ public class InventoryManufacture extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void SetTextFieldNumeric(TextField textField) {
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                    String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    textField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 
 }

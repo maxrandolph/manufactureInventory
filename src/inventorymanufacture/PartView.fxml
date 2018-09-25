@@ -23,19 +23,21 @@
             <RadioButton fx:id="radioOutsourced" mnemonicParsing="false" text="Outsourced" toggleGroup="$radioToggleGroup" />
          </children>
       </HBox>
-      <Button layoutX="266.0" layoutY="350.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="70.0" text="Save" />
+      <Button fx:id="btnSave" layoutX="266.0" layoutY="350.0" mnemonicParsing="false" onAction="#HandleBtnSave" prefHeight="36.0" prefWidth="70.0" text="Save" />
       <Button fx:id="btnCancel" layoutX="351.0" layoutY="350.0" mnemonicParsing="false" onAction="#HandleBtnCancel" prefHeight="36.0" prefWidth="75.0" text="Cancel" />
-      <TextField fx:id="fieldId" disable="true" editable="false" layoutX="165.0" layoutY="73.0" />
-      <TextField fx:id="fieldName" layoutX="165.0" layoutY="117.0" />
-      <TextField fx:id="fieldInv" layoutX="165.0" layoutY="161.0" />
-      <TextField fx:id="fieldMax" layoutX="165.0" layoutY="209.0" prefHeight="25.0" prefWidth="55.0" />
-      <TextField fx:id="fieldCompany" disable="true" layoutX="165.0" layoutY="257.0" />
-      <TextField fx:id="fieldMin" layoutX="259.0" layoutY="209.0" prefHeight="25.0" prefWidth="55.0" />
-      <Label layoutX="146.0" layoutY="77.0" text="ID" />
-      <Label layoutX="136.0" layoutY="165.0" text="Inv" />
-      <Label layoutX="128.0" layoutY="121.0" text="Name" />
-      <Label layoutX="132.0" layoutY="213.0" text="Max" />
-      <Label layoutX="229.0" layoutY="213.0" text="Min" />
-      <Label layoutX="75.0" layoutY="261.0" text="Company Name" />
+      <TextField fx:id="fieldId" disable="true" editable="false" layoutX="165.0" layoutY="94.0" />
+      <TextField fx:id="fieldName" layoutX="165.0" layoutY="126.0" promptText="Part Name" />
+      <TextField fx:id="fieldInv" layoutX="165.0" layoutY="161.0" prefHeight="27.0" prefWidth="149.0" promptText="Number in Stock" />
+      <TextField fx:id="fieldMax" layoutX="165.0" layoutY="235.0" prefHeight="25.0" prefWidth="55.0" promptText="Max" />
+      <TextField fx:id="fieldCompany" layoutX="165.0" layoutY="271.0" promptText="Machine ID" />
+      <TextField fx:id="fieldMin" layoutX="259.0" layoutY="235.0" prefHeight="25.0" prefWidth="55.0" promptText="Min" />
+      <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="96.0" minWidth="100.0" text="ID" />
+      <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="164.0" minWidth="100.0" text="Inv" />
+      <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="128.0" minWidth="100.0" text="Name" />
+      <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="237.0" minWidth="100.0" text="Max" />
+      <Label layoutX="229.0" layoutY="239.0" text="Min" />
+      <Label fx:id="labelCompanyMachine" alignment="CENTER_RIGHT" layoutX="54.0" layoutY="275.0" prefHeight="17.0" prefWidth="100.0" text="Machine ID" textAlignment="RIGHT" />
+      <TextField fx:id="fieldPrice" layoutX="165.0" layoutY="198.0" prefHeight="27.0" prefWidth="149.0" promptText="Price" />
+      <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="202.0" minWidth="100.0" text="Price" />
    </children>
 </AnchorPane>

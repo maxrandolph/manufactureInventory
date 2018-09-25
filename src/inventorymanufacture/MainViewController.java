@@ -28,14 +28,21 @@ public class MainViewController implements Initializable {
     @FXML
     Button btnModifyPart;
     @FXML
+    Button btnDeletePart;
+
+    @FXML
     Button btnAddProduct;
     @FXML
     Button btnModifyProduct;
+    @FXML
+    Button btnDeleteProduct;
+
     @FXML
     Label labelIMS;
 
     @FXML
     TableView<Part> tablePart;
+
     @FXML
     TableColumn<Part, Integer> colPartId;
     @FXML
@@ -53,6 +60,7 @@ public class MainViewController implements Initializable {
     @FXML
     private void HandleBtnAddPart(ActionEvent event) throws IOException {
         System.out.println(InventoryManufacture.inventory.getAllParts());
+        InventoryManufacture.activePart = new Inhouse(InventoryManufacture.inventory.getNewPartId(), "New Part", 5.00, 1, 4, 0, 0);
         InventoryManufacture.actionIntent = ActionIntent.Add;
         InventoryManufacture.ChangeScene("PartView.fxml", btnAddPart);
     }
@@ -60,7 +68,16 @@ public class MainViewController implements Initializable {
     @FXML
     private void HandleBtnModifyPart(ActionEvent event) throws IOException {
         InventoryManufacture.actionIntent = ActionIntent.Modify;
+        InventoryManufacture.activePart = tablePart.getSelectionModel().getSelectedItem();
         InventoryManufacture.ChangeScene("PartView.fxml", btnModifyPart);
+    }
+
+    @FXML
+    private void HandleBtnDeletePart(ActionEvent event) throws IOException {
+        InventoryManufacture.inventory.deletePart(tablePart.getSelectionModel().getSelectedItem());
+        tablePart.getSelectionModel().clearSelection();
+        btnModifyPart.setDisable(true);
+        btnDeletePart.setDisable(true);
     }
 
     @FXML
@@ -72,16 +89,32 @@ public class MainViewController implements Initializable {
     @FXML
     private void HandleBtnModifyProduct(ActionEvent event) throws IOException {
         InventoryManufacture.actionIntent = ActionIntent.Modify;
+        InventoryManufacture.activePart = tablePart.getSelectionModel().getSelectedItem();
+        InventoryManufacture.ChangeScene("ProductView.fxml", btnModifyProduct);
+    }
+
+    @FXML
+    private void HandleBtnDeleteProduct(ActionEvent event) throws IOException {
+        InventoryManufacture.actionIntent = ActionIntent.Modify;
         InventoryManufacture.ChangeScene("ProductView.fxml", btnModifyProduct);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         // Init table data
         colPartId.setCellValueFactory(new PropertyValueFactory<Part, Integer>("partID"));
         colPartName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
         colPriceCostPerUnit.setCellValueFactory(new PropertyValueFactory<>("price"));
         colInventoryLevel.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         tablePart.setItems(InventoryManufacture.inventory.getAllParts());
+
+        // Enable delete and modify buttons when a row is selected.
+        tablePart.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                btnModifyPart.setDisable(false);
+                btnDeletePart.setDisable(false);
+            }
+        });
     }
 }
