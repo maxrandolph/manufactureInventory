@@ -14,15 +14,15 @@ import java.util.ArrayList;
 public class Product {
 
     // members
-    ArrayList<Part> associatedParts;
-    int productID;
-    String name;
-    double price;
-    int inStock;
-    int min;
-    int max;
+    private ArrayList<Part> associatedParts;
+    private int productID;
+    private String name;
+    private double price;
+    private int inStock;
+    private int min;
+    private int max;
 
-    //Ctor
+    // Ctor
     Product(ArrayList<Part> associatedParts, int productID, String name, double price, int inStock, int min, int max) {
         this.associatedParts = associatedParts;
         this.productID = productID;

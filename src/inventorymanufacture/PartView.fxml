@@ -25,12 +25,12 @@
       </HBox>
       <Button layoutX="266.0" layoutY="350.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="70.0" text="Save" />
       <Button fx:id="btnCancel" layoutX="351.0" layoutY="350.0" mnemonicParsing="false" onAction="#HandleBtnCancel" prefHeight="36.0" prefWidth="75.0" text="Cancel" />
-      <TextField disable="true" editable="false" layoutX="165.0" layoutY="73.0" />
-      <TextField layoutX="165.0" layoutY="117.0" />
-      <TextField layoutX="165.0" layoutY="161.0" />
-      <TextField layoutX="165.0" layoutY="209.0" prefHeight="25.0" prefWidth="55.0" />
-      <TextField layoutX="165.0" layoutY="257.0" />
-      <TextField layoutX="259.0" layoutY="209.0" prefHeight="25.0" prefWidth="55.0" />
+      <TextField fx:id="fieldId" disable="true" editable="false" layoutX="165.0" layoutY="73.0" />
+      <TextField fx:id="fieldName" layoutX="165.0" layoutY="117.0" />
+      <TextField fx:id="fieldInv" layoutX="165.0" layoutY="161.0" />
+      <TextField fx:id="fieldMax" layoutX="165.0" layoutY="209.0" prefHeight="25.0" prefWidth="55.0" />
+      <TextField fx:id="fieldCompany" disable="true" layoutX="165.0" layoutY="257.0" />
+      <TextField fx:id="fieldMin" layoutX="259.0" layoutY="209.0" prefHeight="25.0" prefWidth="55.0" />
       <Label layoutX="146.0" layoutY="77.0" text="ID" />
       <Label layoutX="136.0" layoutY="165.0" text="Inv" />
       <Label layoutX="128.0" layoutY="121.0" text="Name" />

@@ -10,13 +10,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
@@ -33,7 +32,18 @@ public class MainViewController implements Initializable {
     @FXML
     Button btnModifyProduct;
     @FXML
-    private Label labelIMS;
+    Label labelIMS;
+
+    @FXML
+    TableView<Part> tablePart;
+    @FXML
+    TableColumn<Part, Integer> colPartId;
+    @FXML
+    TableColumn<Part, String> colPartName;
+    @FXML
+    TableColumn<Part, String> colInventoryLevel;
+    @FXML
+    TableColumn<Part, Double> colPriceCostPerUnit;
 
     @FXML
     private void HandleBtnExit(ActionEvent event) {
@@ -42,6 +52,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void HandleBtnAddPart(ActionEvent event) throws IOException {
+        System.out.println(InventoryManufacture.inventory.getAllParts());
         InventoryManufacture.actionIntent = ActionIntent.Add;
         InventoryManufacture.ChangeScene("PartView.fxml", btnAddPart);
     }
@@ -66,6 +77,11 @@ public class MainViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Init table data
+        colPartId.setCellValueFactory(new PropertyValueFactory<Part, Integer>("partID"));
+        colPartName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
+        colPriceCostPerUnit.setCellValueFactory(new PropertyValueFactory<>("price"));
+        colInventoryLevel.setCellValueFactory(new PropertyValueFactory<>("inStock"));
+        tablePart.setItems(InventoryManufacture.inventory.getAllParts());
     }
 }

@@ -11,7 +11,7 @@ package inventorymanufacture;
  */
 public class Outsourced extends Part {
 
-    String companyName;
+    private String companyName;
 
     public Outsourced(int partID, String name, double price, int inStock, int min, int max, String companyName) {
         super(partID, name, price, inStock, min, max);

@@ -20,13 +20,20 @@ import javafx.stage.Stage;
  */
 public class InventoryManufacture extends Application {
 
+    // App-wide stuff. ActionIntent is used to determine whether an object is
+    // being modified or added. This allows us to use one view class for both
+    // actions.
     public static ActionIntent actionIntent;
+    public static Inventory inventory;
+
+    // JavaFX stuff
     public static Stage stage;
     public static Parent root;
 
     @Override
     public void start(Stage stage) throws Exception {
         actionIntent = ActionIntent.Add;
+        inventory = new Inventory();
 
         root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
 

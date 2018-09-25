@@ -6,6 +6,8 @@
 package inventorymanufacture;
 
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,18 +16,18 @@ import java.util.ArrayList;
 public class Inventory {
 
     // members
-    ArrayList<Product> products;
-    ArrayList<Part> allParts;
+    private ObservableList<Product> products;
+    private ObservableList<Part> allParts;
 
     // Ctor
-    Inventory(ArrayList<Product> products, ArrayList<Part> allParts) {
+    Inventory(ObservableList<Product> products, ObservableList<Part> allParts) {
         this.products = products;
         this.allParts = allParts;
     }
 
     Inventory() {
-        this.products = new ArrayList<Product>();
-        this.allParts = new ArrayList<Part>();
+        this.products = FXCollections.observableArrayList();
+        this.allParts = FXCollections.observableArrayList();
     }
 
     // functions
@@ -67,7 +69,7 @@ public class Inventory {
 
     boolean deletePart(Part part) {
         for (int i = 0; i < allParts.size(); i++) {
-            if (allParts.get(i).getPartID() == part.partID) {
+            if (allParts.get(i).getPartID() == part.getPartID()) {
                 allParts.remove(i);
                 return true;
             }
@@ -92,4 +94,9 @@ public class Inventory {
             }
         }
     }
+
+    ObservableList<Part> getAllParts() {
+        return allParts;
+    }
+
 }

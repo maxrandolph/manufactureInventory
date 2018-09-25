@@ -12,12 +12,12 @@ package inventorymanufacture;
 public abstract class Part {
 
     // Abstract Vars
-    int partID;
-    String name;
-    double price;
-    int inStock;
-    int min;
-    int max;
+    private int partID;
+    private String name;
+    private double price;
+    private int inStock;
+    private int min;
+    private int max;
 
     // Ctor
     Part(int partID, String name, double price, int inStock, int min, int max) {
@@ -34,47 +34,47 @@ public abstract class Part {
         name = value;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setPrice(double value) {
+    public void setPrice(double value) {
         price = value;
     }
 
-    double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    void setInStock(int value) {
+    public void setInStock(int value) {
         inStock = value;
     }
 
-    int getInStock() {
+    public int getInStock() {
         return inStock;
     }
 
-    void setMin(int value) {
+    public void setMin(int value) {
         min = value;
     }
 
-    int getMin() {
+    public int getMin() {
         return min;
     }
 
-    void setMax(int value) {
+    public void setMax(int value) {
         max = value;
     }
 
-    int getMax() {
+    public int getMax() {
         return max;
     }
 
-    void setPartID(int value) {
+    public void setPartID(int value) {
         partID = value;
     }
 
-    int getPartID() {
+    public int getPartID() {
         return partID;
     }
 

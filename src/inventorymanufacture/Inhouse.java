@@ -11,7 +11,7 @@ package inventorymanufacture;
  */
 public class Inhouse extends Part {
 
-    int machineID;
+    private int machineID;
 
     public Inhouse(int partID, String name, double price, int inStock, int min, int max, int machineID) {
         super(partID, name, price, inStock, min, max);
