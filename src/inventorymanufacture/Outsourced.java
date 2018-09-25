@@ -13,6 +13,11 @@ public class Outsourced extends Part {
 
     String companyName;
 
+    public Outsourced(int partID, String name, double price, int inStock, int min, int max, String companyName) {
+        super(partID, name, price, inStock, min, max);
+        this.companyName = companyName;
+    }
+
     String getCompanyName() {
         return companyName;
     }

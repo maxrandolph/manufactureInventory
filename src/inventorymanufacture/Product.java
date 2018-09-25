@@ -22,6 +22,17 @@ public class Product {
     int min;
     int max;
 
+    //Ctor
+    Product(ArrayList<Part> associatedParts, int productID, String name, double price, int inStock, int min, int max) {
+        this.associatedParts = associatedParts;
+        this.productID = productID;
+        this.name = name;
+        this.price = price;
+        this.inStock = inStock;
+        this.min = min;
+        this.max = max;
+    }
+
     // Functions
     void setName(String value) {
         name = value;
@@ -67,11 +78,24 @@ public class Product {
         associatedParts.add(part);
     }
 
+    // return false if the id was not found.
     boolean removeAssociatedPart(int partID) {
+        for (int i = 0; i < associatedParts.size(); i++) {
+            if (associatedParts.get(i).getPartID() == partID) {
+                associatedParts.remove(i);
+                return true;
+            }
+        }
         return false;
     }
 
+    // Returns null if part id not found.
     Part lookupAssocatedPart(int partID) {
+        for (Part part : associatedParts) {
+            if (part.getPartID() == partID) {
+                return part;
+            }
+        }
         return null;
     }
 
